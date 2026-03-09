@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido - Ficohsa</title>
+    <link rel="shortcut icon"
+        href="https://play-lh.googleusercontent.com/hXkeyoROFyQ8XVYSakrT0_zo4Qrt8BI3yTACiLKaFZ7m5Z22Q0Kr0D35PkmVHSKi9nN2hPa91omRSYWyoQL0WQ=w240-h480-rw"
+        type="image/x-icon">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="main-header">
+
+        <!-- Navegación Desktop -->
+        <nav class="header-nav">
+            <a href="#">FICOCHAT
+                <svg class="icon-chevron-down" viewBox="0 0 24 24">
+                    <path d="M6 9l6 6 6-6" />
+                </svg>
+            </a>
+            <div class="divider"></div>
+            <a href="#">CONTÁCTANOS</a>
+            <div class="divider"></div>
+            <a href="#">ESPAÑOL
+                <svg class="icon-chevron-down" viewBox="0 0 24 24">
+                    <path d="M6 9l6 6 6-6" />
+                </svg>
+            </a>
+        </nav>
+
+        <div class="header-logo">
+            <img src="img/logo1.svg" alt="Ficohsa" class="header-logo-img">
+        </div>
+
+        <!-- Navegación Mobile -->
+        <nav class="mobile-nav">
+            <a href="#">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <svg class="icon-chevron-down" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M6 9l6 6 6-6" />
+                </svg>
+            </a>
+            <div class="divider" style="height: 12px; margin: 0 5px;"></div>
+            <a href="#">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="M2 4l10 8 10-8"></path>
+                </svg>
+            </a>
+            <div class="divider" style="height: 12px; margin: 0 5px;"></div>
+            <a href="#">ES
+                <svg class="icon-chevron-down" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                    <path d="M6 9l6 6 6-6" />
+                </svg>
+            </a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <div class="login-wrapper">
+
+            <!-- Panel Izquierdo: Formulario -->
+            <div class="login-left" id="login-container">
+                <div class="loader-overlay" id="loader">
+                    <div class="spinner"></div>
+                </div>
+                <h1 id="main-title">Bienvenido</h1>
+
+                <form id="login-form">
+                    <div class="input-container" id="input-row">
+                        <div class="user-icon-wrapper" id="icon-wrapper">
+                            <svg viewBox="0 0 24 24" id="main-icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <input type="text" class="input-field" id="login-input" placeholder="Ingrese su usuario">
+                        <button type="button" class="toggle-password" id="toggle-password" style="display: none;">
+                            <svg viewBox="0 0 24 24" id="eye-icon">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="form-options" id="options-row">
+                        <label class="checkbox-group" id="remember-group">
+                            <input type="checkbox" checked>
+                            ¿Recordar usuario?
+                        </label>
+                        <a href="#" class="keyboard-link" id="keyboard-link">Teclado virtual</a>
+                    </div>
+
+                    <div class="action-row" id="buttons-row">
+                        <button type="submit" class="btn-submit" id="main-btn" disabled>Siguiente</button>
+                    </div>
+                </form>
+
+                <div class="login-left-footer">
+                    <div class="footer-links" id="bottom-links">
+                        <a href="#">¿Aún no tienes usuario?</a> <span class="sep">|</span>
+                        <a href="#">¿Ha olvidado su usuario?</a> <span class="sep">|</span><br class="mobile-break"
+                            style="display: none;">
+                        <a href="#">¿Ha olvidado su contraseña?</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel Derecho: Logo Grande -->
+            <div class="login-right">
+                <img src="img/logo1.svg" alt="Ficohsa" class="login-large-logo">
+            </div>
+        </div>
+
+        <div class="faq-link-container">
+            <div class="footer-top">
+                <div class="copyright">
+                    © Grupo Ficohsa - <a href="https://www.ficohsa.com" target="_blank">www.ficohsa.com</a>
+                </div>
+                <a href="#" class="faq-link">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    Preguntas frecuentes
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <svg viewBox="0 0 24 24">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Esta banca en línea soporta los navegadores Internet Explorer 10 y 11, Microsoft Edge - navegador de Windows
+            10, Safari 5.0, 5.1 y 6.0, Firefox y Chrome.
+        </div>
+    </footer>
+
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
